@@ -25,12 +25,9 @@
 " ,b : pone breakpoint (python)
 " ,z : muestra nombres relacionados (python)
 " ,s : ordena un bloque de líneas
+" ,mt : gestión de tabs
 
-" :sp crea split vertical
-" :vh crea split horizontal
-" :hide cierra ventana visible
-
-" F : encoje todas las funciones y clases (python)
+" f,F : encoje todas las funciones y clases (python)
 " za: encoje/estira función o clase (python)
 
 " < y > aumenta y disminuye indentación de un bloque
@@ -38,8 +35,35 @@
 " Ctrl - h,j,k,l : mueve entre ventanas
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RECORDATORIO DE ALGUNOS COMANDOS DE VIM
+"
+" MOVER BLOQUES:
+" ma (principio)- d'a (fin) para marcar y borrar bloque
+" p para pegar bloque cortado anteriormente
+
+" COPIAR BLOQUE DE UN DOCUMENTO A OTRO:
+" CTRL-V para modo visual, seleccionar el bloque
+" y
+" Ir al segundo archivo y para pegar el texto después del cursor:
+" p (en modo Normal y cuidado con la columna en la que está el cursor)
+
+" DIVISIÓN DE VENTANAS:
+" :sp crea split vertical
+" :vh crea split horizontal
+" :hide cierra ventana visible
+" CTRL- = : Hace todas las ventanas iguales
+" :zo winc < ó > : incrementa o decrementa ventana
+"
+" MOVERSE POR LOS BUFFERS:
+" ls, y después :bn , donde n es el nº de buffer
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 filetype off
+set nocompatible
 set encoding=utf-8
 
 " Setup Pathogen to manage your plugins
@@ -382,3 +406,4 @@ let g:tagbar_autofocus = 1
 " endif
 
 let g:gitgutter_enabled = 1
+
