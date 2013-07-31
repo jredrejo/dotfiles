@@ -40,6 +40,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 " Para señalar los cambios del archivo con respecto al repo Git
 Bundle 'airblade/vim-gitgutter'
+
 " Visor de Git
 Bundle 'gregsexton/gitv'
 
@@ -298,18 +299,28 @@ set nofoldenable
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_cache_file = $HOME.'/.vim/tmp/Powerline.cache'
 
-"Nerdtree
+set noshowmode
+
+" call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+
+" Nerdtree
 map <F3> :NERDTreeToggle<CR>
 
 " Ignore files on NERDTree
-"let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " toggle Tagbar display
 map <F4> :TagbarToggle<CR>
 " autofocus on Tagbar open
 let g:tagbar_autofocus = 1
 
+" toggle gitgutter display
+map <F12> :GitGutterToggle<CR>
+
+"testing
 " debugger keyboard shortcuts
 "map <F5> :Dbg over<CR>
 "map <F6> :Dbg into<CR>
@@ -320,13 +331,14 @@ let g:tagbar_autofocus = 1
 "map <F11> :Dbg down<CR>
 "map <F12> :Dbg up<CR>
 
-" use 256 colors when possible
- if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
-     let &t_Co = 256
-     " color
-     colorscheme fisa
- else
-     " color
-     colorscheme delek
- endif
 
+
+" use 256 colors when possible
+" if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
+"     let &t_Co = 256
+"     colorscheme fisa
+ "else
+  "   colorscheme delek
+" endif
+
+let g:gitgutter_enabled = 1
