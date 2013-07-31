@@ -17,6 +17,8 @@
 " F4: Browser de clases
 " F5: Gundo
 
+" CTRL-e : Redimensionar ventanas con h,jk,l
+" CTRL - h,j,k,l : mueve entre ventanas
 " CTRL-Z: Guarda archivo
 " ,e : cierra archivo
 " ,E : cierra todos los archivos abiertos
@@ -33,9 +35,8 @@
 
 " < y > aumenta y disminuye indentación de un bloque
 
-" Ctrl - h,j,k,l : mueve entre ventanas
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RECORDATORIO DE ALGUNOS COMANDOS DE VIM
@@ -119,7 +120,10 @@ call vundle#rc()
     " Ctrl-p
     Bundle 'kien/ctrlp.vim'
 
-        if iCanHazVundle == 0
+    " Win resizer:
+    Bundle 'jimsei/winresizer'
+
+    if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
         :BundleInstall
