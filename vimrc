@@ -8,47 +8,70 @@
 "
 " Dependencias necesarias:
 " vim con soporte de python
-" apt-get install pep8 pyflakes exuberant-ctags
+" apt-get  install vim-nox pep8 pyflakes exuberant-ctags
 
 set nocompatible
 filetype off
 set encoding=utf-8
+
+" Setup Pathogen to manage your plugins
+" mkdir -p ~/.vim/autoload ~/.vim/bundle
+" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
+" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
+call pathogen#infect()
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" " required!
-Bundle 'gmarik/vundle'
+" Setting up Vundle - the vim plugin bundler
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+    " Línea de estdo más funcional para vim"
+
+    Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'Gundo'
+
+    Bundle 'pyflakes.vim'
+    " Class/module browser
+    Bundle 'majutsushi/tagbar'
+
+    "Python-mode
+    Bundle 'klen/python-mode'
+
+    " Python and PHP Debugger
+    "Bundle 'fisadev/vim-debug.vim'
+
+    " Para gestionar Git
+    Bundle 'tpope/vim-fugitive'
+    " Para señalar los cambios del archivo con respecto al repo Git
+    Bundle 'airblade/vim-gitgutter'
+    " Visor de Git
+    Bundle 'gregsexton/gitv'
+
+    " Tab list panel
+    Bundle 'kien/tabman.vim'
+
+    " Ctrl-p
+    Bundle 'kien/ctrlp.vim'
+
+        if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
+" Setting up Vundle - the vim plugin bundler end
 "
-" " The bundles you install will be listed here
-"
-" Línea de estdo más funcional para vim"
-
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'scrooloose/nerdtree'
-Bundle 'Gundo'
-
-Bundle 'pep8'
-
-" Class/module browser
-Bundle 'majutsushi/tagbar'
-
-" Python and PHP Debugger
-"Bundle 'fisadev/vim-debug.vim'
-
-" Para gestionar Git
-Bundle 'tpope/vim-fugitive'
-" Para señalar los cambios del archivo con respecto al repo Git
-Bundle 'airblade/vim-gitgutter'
-
-" Visor de Git
-Bundle 'gregsexton/gitv'
-
-
-" Tab list panel
-Bundle 'kien/tabman.vim'
-
-
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source % 
@@ -173,16 +196,9 @@ set smartcase
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-"set nobackup
-"set nowritebackup
-"set noswapfile
-
-
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
+set nobackup
+set nowritebackup
+set noswapfile
 
 
 " ============================================================================
@@ -330,8 +346,6 @@ map <F12> :GitGutterToggle<CR>
 "map <F10> :Dbg watch<CR>
 "map <F11> :Dbg down<CR>
 "map <F12> :Dbg up<CR>
-
-
 
 " use 256 colors when possible
 " if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
