@@ -15,6 +15,7 @@
 " F2: Paste
 " F3: NerdTree
 " F4: Browser de clases
+" F5: Gundo
 
 " CTRL-Z: Guarda archivo
 " ,e : cierra archivo
@@ -254,18 +255,8 @@ set nowritebackup
 set noswapfile
 
 
-" ============================================================================
-" Python IDE Setup
-" ============================================================================
-
-
-" Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
-let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
+"configuración de Gundo:
+nnoremap <F5> :GundoToggle<CR>
 
 
 
