@@ -9,7 +9,35 @@
 " Dependencias necesarias:
 " vim con soporte de python
 " apt-get  install vim-nox pep8 pyflakes exuberant-ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DOCUMENTACIÓN DE ESTA CONFIGURACIÓN
+" Shortkeys:
+" F2: Paste
+" F3: NerdTree
+" F4: Browser de clases
 
+" CTRL-Z: Guarda archivo
+" ,e : cierra archivo
+" ,E : cierra todos los archivos abiertos
+" ,8 : Chequea lint y pep8 en archivos Python
+" ,n y ,m : mueve entre tabs
+" ,l : muestra u oculta los finales de línea
+" ,b : pone breakpoint (python)
+" ,z : muestra nombres relacionados (python)
+" ,s : ordena un bloque de líneas
+
+" :sp crea split vertical
+" :vh crea split horizontal
+" :hide cierra ventana visible
+
+" F : encoje todas las funciones y clases (python)
+" za: encoje/estira función o clase (python)
+
+" < y > aumenta y disminuye indentación de un bloque
+
+" Ctrl - h,j,k,l : mueve entre ventanas
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 set encoding=utf-8
