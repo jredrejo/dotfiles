@@ -48,7 +48,8 @@ call vundle#rc()
 
     "Python-mode
     Bundle 'klen/python-mode'
-
+    " jedi-vim
+    Bundle 'davidhalter/jedi-vim'
     " Python and PHP Debugger
     "Bundle 'fisadev/vim-debug.vim'
 
