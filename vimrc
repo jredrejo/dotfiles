@@ -315,7 +315,7 @@ set nofoldenable
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_file = $HOME.'/.vim/tmp/Powerline.cache'
 
 set noshowmode
@@ -332,9 +332,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map <F4> :TagbarToggle<CR>
 " autofocus on Tagbar open
 let g:tagbar_autofocus = 1
-
-" toggle gitgutter display
-map <F12> :GitGutterToggle<CR>
 
 "testing
 " debugger keyboard shortcuts
