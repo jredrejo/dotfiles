@@ -53,7 +53,7 @@
 
 " DIVISIÓN DE VENTANAS:
 " :sp crea split vertical
-" :vh crea split horizontal
+" :vs crea split horizontal
 " :hide cierra ventana visible
 " CTRL- = : Hace todas las ventanas iguales
 " :zo winc < ó > : incrementa o decrementa ventana
