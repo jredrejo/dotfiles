@@ -35,8 +35,27 @@
 
 " < y > aumenta y disminuye indentación de un bloque
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" gg=G indenta el archivo
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RECORDATORIO DE COMANDOS DE TMUX
+" CTRL-b ? : list all keybindings
+" 
+" CTRL-B-c : create new window
+" CTRL-b n,p: move to previous/next window
+" CTRL-B &: force a window to close
+" CTRL-B l : move to penultimate used windows
+"
+" CTRL-B - x : cerrar pane
+" CTRL-B - z: maximize pane
+" CTRL-b - " : vertical screen cut
+" CTRL-b - % : horizontal screen cut
+" CTRL-B - FLECHAS: mueve al pane
+" cTRL-B CTRL-FLECHA: resize pane
+" CTRL-b ! : Convert a pane to a window
+"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RECORDATORIO DE ALGUNOS COMANDOS DE VIM
@@ -72,6 +91,7 @@ set encoding=utf-8
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 " Now you can install any plugin into a .vim/bundle/plugin-name/ folder
+set nocp
 call pathogen#infect()
 
 set rtp+=~/.vim/bundle/vundle/
