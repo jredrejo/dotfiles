@@ -65,14 +65,15 @@
 " p para pegar bloque cortado anteriormente
 
 " COPIAR BLOQUE DE UN DOCUMENTO A OTRO:
-" CTRL-V para modo visual, seleccionar el bloque
-" y
+" CTRL-V para modo visual, seleccionar el bloque ($ va al final de línea)
+" Pulsar "y" (yanking)
 " Ir al segundo archivo y para pegar el texto después del cursor:
 " p (en modo Normal y cuidado con la columna en la que está el cursor)
 
 " DIVISIÓN DE VENTANAS:
 " :sp crea split vertical
 " :vs crea split horizontal
+" CTRL-W + flecha mueve entre ventanas(panes) creados
 " :hide cierra ventana visible
 " CTRL- = : Hace todas las ventanas iguales
 " :zo winc < ó > : incrementa o decrementa ventana
